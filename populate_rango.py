@@ -57,21 +57,7 @@ def populate():
 	for c in Category.objects.all():
 		for p in Page.objects.filter(category = c):
 			print ("- {0} - {1}".format(str(c), str(p)))
-			
-	# Ch5 exercise: update pop script so that 
-	# Python category has 128 views, 64 likes
-	# Django has 64 views and 32 likes
-	# Other frameworks category has 32 views and 16 likes
-	
-	#print("Trying to print python category likes")
-	#pythCat = Category.objects.filter("Python")
-	#pythCat.views = 128
-	#pythCat.likes = 64
-	#pythCat.save()
-	#print(pythCat.views + "\n")
-	#print(pythCat.likes)
-	#print ("Finished prinitng Python category likes")
-	
+				
 def add_page(cat, title, url, views = 0):
 	p = Page.objects.get_or_create(category = cat, title = title)[0]
 	p.url = url
