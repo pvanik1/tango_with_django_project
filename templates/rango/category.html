@@ -9,7 +9,7 @@
 	{% if category %}
 		<h1>{{ category.name }}</h1>
 		
-		{% if pages % }
+		{% if pages %}
 			<ul>
 			{% for page in pages %}
 				<li><a href="{{ page.url }}">{{ page.title }}</a></li>
@@ -19,7 +19,7 @@
 			<strong>No pages currently in category.</strong>
 		{% endif %}
 		
-		<a href="{% url 'add_page' category.slug %">Add a Page</a>
+		<a href="{% url 'add_page' category.slug %}">Add a Page</a>
 	{% else %}
 			The specified category does not exist!
 	{% endif %}
